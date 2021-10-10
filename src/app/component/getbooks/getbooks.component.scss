@@ -1,0 +1,34 @@
+
+.main-card{
+    width: 235px;
+    height: 275px;
+    margin-bottom: 20px;
+    margin-top: 37px;
+    margin-left: 50px;
+    padding: 0%;
+}
+// .main-card{
+//     box-sizing: border-box;
+//     // border: 2px red solid;
+// }
+h3 , h5{
+    padding: 0%;
+    margin: 0%;
+}
+.ratingbtn{
+    background-color: #388E3C;
+    padding: 0%;
+    margin: 0%;
+    width: 33px;
+    height: 23px;
+    color:white;
+}
+.wish-cart{
+    margin-top: -80px;
+}
+.rating-quantity{
+    margin: 4px 0px 4px 0px;
+}
+.favbtn:focus{
+    color: #A03037;
+}
