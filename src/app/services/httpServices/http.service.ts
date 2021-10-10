@@ -10,14 +10,21 @@ export class HttpService {
   BaseUrl=environment.BaseUrl
   constructor(private httpClient:HttpClient) { }
 
-  postService(url: string= '' , payload: any, tokenRequired:boolean=false, httpOption:any){
+  postService(url: string= '' , payload: any, tokenRequired:boolean=false, httpOption:any=null){
 
     return this.httpClient.post(url,payload,tokenRequired && httpOption);
 
   }
 
-  // getService(){
+  getService( url: string= '' , tokenRequired:boolean=false, httpOption:any){
 
-  // }
+    return this.httpClient.get(url,tokenRequired && httpOption);
+
+  }
+  deleteService(url:string='', payload: any,  tokenRequired:boolean=false, httpOption:any) {
+    console.log(url);
+    return this.httpClient.delete(url, tokenRequired && httpOption)
+  }
+  
   
 }

@@ -20,6 +20,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import { HomepageComponent } from './component/homepage/homepage.component';
 import {MatButtonModule} from '@angular/material/button';
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { AuthguardserviceService } from './services/AuthguardService/authguardservice.service';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { GetbooksComponent } from './component/getbooks/getbooks.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
+import { CartComponent } from './component/cart/cart.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -32,6 +44,13 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     SignupComponent,
     HomepageComponent,
+    HeaderComponent,
+    FooterComponent,
+    ForgotpasswordComponent,
+    DashboardComponent,
+    GetbooksComponent,
+    WishlistComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,10 +62,13 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     FlexLayoutModule,
     HttpClientModule,MatSnackBarModule,FormsModule,ReactiveFormsModule,MatCardModule,
-    MatTabsModule,MatDividerModule,MatButtonModule
+    MatTabsModule,MatDividerModule,MatButtonModule,MatToolbarModule,MatTooltipModule,
+    MatExpansionModule
    
   ],
-  providers: [],
+  providers: [
+    AuthguardserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
