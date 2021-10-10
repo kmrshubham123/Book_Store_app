@@ -33,7 +33,4 @@ export class UserService {
     }
     return this.httpService.postService(this.BaseUrl + '/bookstore_user/login',requestdata,false,httpAuthOptions)
   }
-
-
-
 }

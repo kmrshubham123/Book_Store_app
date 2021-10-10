@@ -1,0 +1,42 @@
+<div class="header">
+    <mat-toolbar fxLayout="row" fxLayoutAlign="space-around center">
+        <div class="book" fxLayoutGap="3px" fxLayoutAlign="center center" >
+          
+                <img src="..\assets\education.svg" alt="" height="23.71px" width="31.04px">
+  
+            <span class="title">Bookstore</span>
+        </div>
+
+        <div class="searchIcon" >
+            <button mat-icon-button class="search-icon">
+               <img src="..\assets\search_black_24dp.svg" alt="">
+            </button>
+            <input class="searchInput" placeholder="search...">
+        </div>
+
+       
+
+        <div class="person-cart" fxLayout="row"  >
+            <button mat-stroked-button class="person" fxLayout="column"  style="background-color: #A03037;">
+
+                <img src="..\assets\person_white_24dp.svg" alt="" >
+                <div class="textbtn">Profile</div>
+
+            </button>
+            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;">
+
+                <img src="..\assets\shopping_cart_white_24dp.svg" alt="">
+                <div class="textbtn">Cart</div>
+
+            </button>
+            <button routerLink="/dashboard/wishlist" mat-stroked-button style="background-color: #A03037;">
+
+                <img src="..\assets\Book\favorite_border_white_24dp (1).svg" alt="">
+                <div class="textbtn">Wishlist</div>
+
+            </button>
+
+        </div>
+
+    </mat-toolbar>
+</div>

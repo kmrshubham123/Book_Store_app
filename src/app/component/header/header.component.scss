@@ -1,0 +1,33 @@
+
+.mat-toolbar{
+    background-color: #A03037;
+    height: 70px;
+}
+.title{
+    color: white;
+    font-size: medium;
+    font-weight:normal;
+}
+
+.textbtn{
+    color: white;
+  
+}
+.searchIcon {
+    border-radius: 5px;
+    width: 490px;
+    outline: none;
+    border: 1px solid white;
+    background-color: white;
+}
+
+.search-icon,
+.searchInput {
+    border: 0px;
+
+}
+
+.search-icon,
+.searchInput:focus {
+    outline: none;
+}
