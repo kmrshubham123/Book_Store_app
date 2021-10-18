@@ -2,39 +2,60 @@
     <mat-toolbar fxLayout="row" fxLayoutAlign="space-around center">
         <div class="book" fxLayoutGap="3px" fxLayoutAlign="center center" >
           
-                <img src="..\assets\education.svg" alt="" height="23.71px" width="31.04px">
+                <img src="..\assets\education.svg" alt="" height="23.71px" width="31.04px" routerLink="/dashboard/getbooks" style="cursor: pointer;" >
   
-            <span class="title">Bookstore</span>
+            <span class="title" style="padding-right: 6px;">Bookstore</span>
         </div>
 
-        <div class="searchIcon" >
+        <div class="searchIcon" fxFlex.xs="70%" >
             <button mat-icon-button class="search-icon">
                <img src="..\assets\search_black_24dp.svg" alt="">
             </button>
-            <input class="searchInput" placeholder="search...">
+            <input class="searchInput" style="width: 70%;" fxFlex.xs="45%"  placeholder="search...">
         </div>
 
        
 
-        <div class="person-cart" fxLayout="row"  >
-            <button mat-stroked-button class="person" fxLayout="column"  style="background-color: #A03037;">
+        <div class="person-cart" fxLayout="row"   >
+            <button  mat-stroked-button class="person" fxLayout="column" [matMenuTriggerFor] = "menu"  style="background-color: #A03037;">
 
                 <img src="..\assets\person_white_24dp.svg" alt="" >
                 <div class="textbtn">Profile</div>
 
             </button>
-            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;">
+            <mat-menu #menu = "matMenu" style="margin-left: -50px;" >
+                <div class="profileSubMenu">
+                <div class="pftitle">
+                    <h4 style="margin:2px;"><b>Welcome</b></h4>
+                    <p><small style="color: #878787;">To access account and manage orders</small></p>
+                    <button (click)="logout()" class="mergebtn" mat-stroked-button>LOGIN/SIGNUP</button>
+                </div>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+                <div class="myOrderbtn" fxLayoutAlign="start center" fxLayoutGap="10px" style="margin-bottom: 10px;">
+                    <img src="..\assets\header\account_balance_wallet_black_18dp.svg" alt="">
+                    <span class="myOrderbtn" style="color: #878787;" >My Orders</span>
+                </div>
+                <div class="wishlistbtn" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <img src="..\assets\header\favorite_border_black_18dp.svg" alt="">
+                    <span routerLink="/dashboard/wishlist" class="myOrderbtn" style="color: #878787;">Wishlists</span>
+                </div>
+            </div>
+            </mat-menu>
+
+            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;"  >
 
                 <img src="..\assets\shopping_cart_white_24dp.svg" alt="">
                 <div class="textbtn">Cart</div>
 
             </button>
-            <button routerLink="/dashboard/wishlist" mat-stroked-button style="background-color: #A03037;">
+            <!-- <button routerLink="/dashboard/wishlist" mat-stroked-button style="background-color: #A03037;">
 
                 <img src="..\assets\Book\favorite_border_white_24dp (1).svg" alt="">
                 <div class="textbtn">Wishlist</div>
 
-            </button>
+            </button> -->
 
         </div>
 
