@@ -1,17 +1,14 @@
+
 .footer{
     background-color: #2E1D1E;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    flex-shrink: 0;
-    flex-grow: 0;
-    padding: 0;
- 
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 13%;
+    color: #FFFFFF;
 }
-.text{
-    color: white;
-    font-size : 12px;
-    font-family: Lato;
-
+@media (max-width : 425px){
+    .footer{
+       width:350px;
+    }
 }
