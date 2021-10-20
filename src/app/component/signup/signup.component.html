@@ -1,6 +1,6 @@
 <mat-card class="main-container" fxLayoutAlign="center center">
 
-    <form class="" [formGroup]="signUpForm"  fxLayout="column" fxLayoutGap="24px">
+    <form class="" [formGroup]="signUpForm"  fxLayout="column" fxLayoutGap="20px">
 
         <div class="fullname">
             <div><mat-label>Full Name</mat-label></div>
@@ -27,7 +27,7 @@
                 </button>
             </mat-form-field>
         </div>
-        <div class="MobileNo" >
+        <div class="MobileNo"  >
             <div><mat-label>Mobile Number</mat-label></div>
             <mat-form-field appearance="outline" class="input-bar">
                 <input formControlName="mobileNo" matInput placeholder="Mobile Number">
@@ -36,7 +36,7 @@
         </div>
         <br>
 
-        <div class="SubmitBtn" >
+        <div class="SubmitBtn">
             <button class="signup-btn" (click)=" onSubmit()" mat-raised-button>SignUp</button>
         </div>
 

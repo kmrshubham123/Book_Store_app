@@ -23,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
 import { AuthguardserviceService } from './services/AuthguardService/authguardservice.service';
@@ -32,6 +33,19 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { CartComponent } from './component/cart/cart.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatOptionModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { OrderplacedComponent } from './component/orderplaced/orderplaced.component';
+import { BookdetailComponent } from './component/bookdetail/bookdetail.component';
+import { RatingstarComponent } from './component/ratingstar/ratingstar.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { AdminregistrationComponent } from './component/adminregistration/adminregistration.component';
+import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
+import { AdminhomeComponent } from './component/adminhome/adminhome.component';
+
+
+
 
 
 
@@ -51,6 +65,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GetbooksComponent,
     WishlistComponent,
     CartComponent,
+    OrderplacedComponent,
+    BookdetailComponent,
+    RatingstarComponent,
+    AdmindashboardComponent,
+    AdminregistrationComponent,
+    AdminloginComponent,
+    AdminhomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +84,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FlexLayoutModule,
     HttpClientModule,MatSnackBarModule,FormsModule,ReactiveFormsModule,MatCardModule,
     MatTabsModule,MatDividerModule,MatButtonModule,MatToolbarModule,MatTooltipModule,
-    MatExpansionModule
+    MatExpansionModule,MatMenuModule,MatOptionModule,
+    MatFormFieldModule,MatSelectModule
+
    
   ],
   providers: [

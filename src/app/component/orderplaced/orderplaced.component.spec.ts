@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrderplacedComponent } from './orderplaced.component';
@@ -8,7 +9,10 @@ describe('OrderplacedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderplacedComponent ]
+      declarations: [ OrderplacedComponent ],
+      imports:[ HttpClientModule
+
+      ],
     })
     .compileComponents();
   });

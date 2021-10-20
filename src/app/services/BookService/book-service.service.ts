@@ -86,7 +86,60 @@ export class BookServiceService {
         'Content-Type': 'application/json'
       })
     }
-    return this.httpService.deleteService(this.BaseUrl+'/bookstore_user/remove_cart_item'+data.product_id._id,{},true, httpAuthOptions);
+    return this.httpService.deleteService(this.BaseUrl+'/bookstore_user/remove_cart_item/'+data._id,{},true, httpAuthOptions);
   }
-  
+
+  customerDetailService(data:any){
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.putService(this.BaseUrl+'/bookstore_user/edit_user',data,true, httpAuthOptions);
+  }
+
+  bookcheckoutService(data: any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postService(this.BaseUrl+'/bookstore_user/add/order',data,true, httpAuthOptions);
+  }
+
+
+
+  /*****Feed-Back*POST***/
+  FeedbackService(review: any,data:any) {
+    this.token = localStorage.getItem('token');
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postService(this.BaseUrl+'/bookstore_user/add/feedback/'+data,review,true,httpAuthOptions);
+  }
+
+/*****Feed-Back***GET****/
+GetFeedbackService(id:any){
+
+    let httpAuthOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log(httpAuthOptions); 
+    
+    return this.httpService.getService(this.BaseUrl+'/bookstore_user/get/feedback/'+id,true,httpAuthOptions);
+
+  }
+
 }
+  
+

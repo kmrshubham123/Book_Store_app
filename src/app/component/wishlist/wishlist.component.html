@@ -1,24 +1,25 @@
-<div class="main-container">
+<div class="main-container" fxFlex.xs="margin-left: -37px" >
 
-    <div class="head-link" fxLayout="row" fxLayoutAlign="start center">
+    <div class="head-link" fxLayout="row" fxLayoutAlign="start">
         <div class="Homelink" routerLink="/dashboard/getbooks">Home</div><span>/My Wishlist</span>
 
     </div>
 
 
 
-    <div class="content-box">
+    <div class="content-box" >
         <div class="wish-cal" style="background-color: #F5F5F5; border: 1px solid #E4E4E4;"
             fxLayoutAlign="start center">
             <div class="wishText" style="margin-left: 36px;">
 
-                <b>My Wishlist<span>({{wishListArray.length}})</span></b>
+                <b>My Wishlist<span>({{wishListArray?.length}})</span></b>
 
             </div>
         </div>
-        <mat-card class="wishlist" *ngFor="let list of wishListArray">
+        <mat-card class="wishlist" *ngFor="let list of wishListArray" >
+        <div claas="adjust" fxFlex.xs="50%">
 
-            <div class="img-content" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="img-content" fxLayout="row" fxLayoutAlign="space-between center" style="margin: 18.5px 0px 38px 0px">
 
                 <div fxLayout="row">
                     <div class="book-image" style=" width: 123px;">
@@ -34,11 +35,12 @@
                     </div>
                 </div>
 
-                <div (click)="DeleteWishList(list)" class="delete">
-                    <mat-icon  class="deletebtn">delete_outline</mat-icon>
+                <div (click)="DeleteWishList(list)" class="delete" fxFlex.xs="end end">
+                    <mat-icon class="deletebtn">delete_outline</mat-icon>
                 </div>
 
             </div>
+        </div>
 
         </mat-card>
     </div>

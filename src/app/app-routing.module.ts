@@ -11,6 +11,14 @@ import { AuthenticationguardGuard } from '../app/authenticationguard/authenticat
 import { GetbooksComponent } from './component/getbooks/getbooks.component';
 import { WishlistComponent } from './component/wishlist/wishlist.component';
 import { CartComponent } from './component/cart/cart.component';
+import { OrderplacedComponent } from './component/orderplaced/orderplaced.component';
+import { BookdetailComponent } from './component/bookdetail/bookdetail.component';
+import { RatingstarComponent } from './component/ratingstar/ratingstar.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { AdminregistrationComponent } from './component/adminregistration/adminregistration.component';
+import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
+import { AdminhomeComponent } from './component/adminhome/adminhome.component';
+
 
 
 const routes: Routes = [
@@ -23,13 +31,26 @@ const routes: Routes = [
   {path:'header' , component:HeaderComponent},
   {path:'footer' , component:FooterComponent},
   {path:'forgot' , component:ForgotpasswordComponent},
- 
+  // {path:'orderplaced',component:OrderplacedComponent},
+
+  {path:'ratingstar',component:RatingstarComponent},
+  {path:'adminRegistration',component:AdminregistrationComponent},
+  {path:'adminLogin',component:AdminloginComponent},
+  {path:'admin',component:AdmindashboardComponent},
+  {path:'adminhome',component:AdminhomeComponent},
+
+
+
+
+
 
   {path:'dashboard',component:DashboardComponent, canActivate:[AuthenticationguardGuard],
   children:[
-    {path:'getbooks' , component:GetbooksComponent},
-    {path:'wishlist' , component:WishlistComponent},
-    {path:'cart' , component:CartComponent},
+    {path:'getbooks', component:GetbooksComponent},
+    {path:'wishlist', component:WishlistComponent},
+    {path:'cart', component:CartComponent},
+    {path:'orderplaced',component:OrderplacedComponent},
+    {path:'bookdetail',component:BookdetailComponent},
     
   ]}
 

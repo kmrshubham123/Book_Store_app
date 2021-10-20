@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookServiceService } from 'src/app/services/BookService/book-service.service';
 import { DataService } from 'src/app/services/dataService/data.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
@@ -11,7 +11,7 @@ export class WishlistComponent implements OnInit {
 wishListArray:any=[];
 
 
-  constructor(private bookService:BookServiceService,private dataService:DataService ) { }
+  constructor(private bookService:BookServiceService,private dataService:DataService, private matSnackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -41,10 +41,13 @@ wishListArray:any=[];
     this.bookService.deleteWishlistService(data).subscribe((response:any)=>{
       this.wishListArray=response['result']
       this.dataService.sendData(response);
-      
-    },error=>(
-      console.log("DeleteWishList_Error", error)
-    ))
+      this.matSnackBar.open("remove successful ", ' ', {duration: 3000,});
+
+    },error =>{
+      console.log("Delete_wishList_error ",error);
+      this.matSnackBar.open("Something went wrong ", ' ', {duration: 3000,});
+    })
+    
     
   }
 

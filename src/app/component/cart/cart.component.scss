@@ -1,23 +1,38 @@
 .main-container{
     box-sizing: border-box;
     margin-bottom: 37px;
+  
 }
 .content-container{
-    margin-left: 177px;
-    margin-right: 415px;
+    // margin-left: 177px;
+    // margin-right: 415px;
+    margin-top: 70px;    
     padding: 30px;
+    // width: 60%;
+    margin-left: -18%;
+    margin-bottom: 37px;
 }
 .Homelink:hover{
     cursor: pointer;
 }
 .head-link{
-    margin-left:174px;
+    margin-left:105px;
     margin-top: 19px;
     margin-bottom: 19px;
 } 
 .panel{
     width:275px;
     height: 40px;
+}
+
+.numeric-value{
+    background-color: white; 
+    border:1px solid #707070;
+  
+}
+.numeric-value:focus{
+
+    border:1px solid #707070;
 }
 
 .orderbtn{
@@ -29,4 +44,12 @@
 }
 .removeCart:hover{
 cursor: pointer;
+}
+// ----------------matcard2
+.secMatcard{
+    margin-left: -18%;
+
+}
+.matcard3{
+    margin-left: -18%;
 }

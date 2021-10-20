@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { WishlistComponent } from './wishlist.component';
 
@@ -8,7 +10,11 @@ describe('WishlistComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WishlistComponent ]
+      declarations: [ WishlistComponent ],
+      imports:[ HttpClientModule,
+                MatSnackBarModule
+
+      ]
     })
     .compileComponents();
   });

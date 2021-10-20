@@ -1,51 +1,53 @@
-<div class="main-container" fxLayout="row wrap" fxLayoutGap="10px">
-  <!-- <div class="book-title">
-  <h4>books</h4>
-  </div> -->
-  <mat-card class="main-card" *ngFor="let book of bookArray">
+<div class="main-box" style="min-height:100vh;">
+  <div class="book-title">
+    <h2><b>Books ({{bookArray.length}})</b></h2>
+  </div>
+  <div class="main-container" fxLayout="row wrap" fxLayoutGap="10px">
 
-    <div style="background-color: #F5F5F5; padding: 16px;" fxLayoutAlign="center center">
-      <img src="..\assets\Book\Image 11.png" width="105px" height="135px">
-    </div>
+    <mat-card class="main-card" *ngFor="let book of bookArray">
+
+      <div style="background-color: #F5F5F5; padding: 16px; " fxLayoutAlign="center center"
+        (click)="bookDetailsPage(book)">
+        <img src="..\assets\Book\Image 11.png" width="105px" height="135px" style="cursor: pointer;">
+      </div>
 
 
 
-    <div class="content">
-      <div style="padding-left: 15px;">
+      <div class="content">
+        <div style="padding-left: 15px;">
 
-        <h3>{{book.bookName}}</h3>
-        <h5>{{book.author}}</h5>
+          <h3>{{book.bookName}}</h3>
+          <h5>{{book.author}}</h5>
 
-        <div class="rating-quantity" fxLayout="row" fxLayoutGap="5px">
-          <button mat-raised-button class="ratingbtn" fxLayoutAlign="center center">
-            <!-- <span>{{getRandomRating()}}</span> -->
-            <span>4.5</span>
-            <img src="..\assets\Book\star_white_18dp.svg" width="13px" height="13px">
+          <div class="rating-quantity" fxLayout="row" fxLayoutGap="5px">
+            <button mat-raised-button class="ratingbtn" fxLayoutAlign="center center">
+              <!-- <span>{{getRandomRating()}}</span> -->
+              <span>4.5</span>
+              <img src="..\assets\Book\star_white_18dp.svg" width="13px" height="13px">
+            </button>
+            <div class="quantity">({{book.quantity}})</div>
+          </div>
+
+          <div class="price">
+            <h3 fxLayoutGap="5px"><b>Rs. {{book.price}}</b><del>Rs. {{book.price*1.5}}</del></h3>
+          </div>
+
+        </div>
+
+
+        <div class="wish-cart" fxLayout="column" fxLayoutAlign="right end">
+          <button (click)="wishlist(book)" mat-icon-button matTooltip="wishlist" class="favbtn">
+            <mat-icon>favorite</mat-icon>
           </button>
-          <div class="quantity">({{book.quantity}})</div>
+          <button (click)="cart(book)" mat-icon-button matTooltip="Add-Cart" class="favbtn">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
         </div>
 
-        <div class="price">
-          <h3 fxLayoutGap="5px"><b>Rs. {{book.price}}</b><del>Rs. 5000</del></h3>
-        </div>
+
 
       </div>
 
-
-      <div class="wish-cart" fxLayout="column" fxLayoutAlign="right end" >
-        <button (click)="wishlist(book)" mat-icon-button matTooltip="wishlist" class="favbtn">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button (click)="cart(book)" mat-icon-button matTooltip="Add-Cart" class="favbtn">
-          <mat-icon>add_shopping_cart</mat-icon>
-        </button>
-      </div>
-
-    
-
-    </div>
-
-  </mat-card>
+    </mat-card>
+  </div>
 </div>
-
-
