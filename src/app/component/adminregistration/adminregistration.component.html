@@ -1,0 +1,47 @@
+<mat-card class="main-container" fxLayoutAlign="center center">
+
+    <form class="" [formGroup]="registrationForm"  fxLayout="column" fxLayoutGap="20px">
+
+        <div class="fullname">
+            <div><mat-label>Full Name</mat-label></div>
+            <mat-form-field appearance="outline" class="input-bar">
+                <input formControlName="fullName" matInput placeholder="Full name">
+                <mat-error>Enter valid Full name</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="EmailId">
+            <div><mat-label>Email Id</mat-label></div>
+            <mat-form-field appearance="outline"class="input-bar">
+                <input formControlName="email" matInput placeholder="Email Id">
+                <mat-error>Enter valid Email</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="Password">
+            <div><mat-label>Password</mat-label></div>
+            <mat-form-field appearance="outline"class="input-bar">
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <mat-error >Enter valid Password</mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide" style="border:none; outline:none; background:none;">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="MobileNo"  >
+            <div><mat-label>Mobile Number</mat-label></div>
+            <mat-form-field appearance="outline" class="input-bar">
+                <input formControlName="phone" matInput placeholder="Mobile Number">
+                <mat-error>Enter valid Mobile No.</mat-error>
+            </mat-form-field>
+        </div>
+        <br>
+
+        <div class="SubmitBtn">
+            <button class="signup-btn" (click)=" onSubmit()" mat-raised-button>SignUp</button>
+        </div>
+
+    </form>
+
+   
+</mat-card>
+
