@@ -1,0 +1,21 @@
+.main-container{
+    margin: 37px 0px;
+}
+.add-btn{
+    background-color: #8F2B2F;
+    color: white;
+    width: 48%;
+}
+.wish-btn{
+    background-color: #373434;
+    color: white;
+    width: 48.8%;
+}
+.bookbreif li{
+    color: #878787;
+}
+@media (max-width : 425px){
+    .main-container{
+       width:498px;
+    }
+}

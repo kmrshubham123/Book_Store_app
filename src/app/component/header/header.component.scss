@@ -2,20 +2,23 @@
 .mat-toolbar{
     background-color: #A03037;
     height: 70px;
+ 
 }
 .title{
     color: white;
     font-size: medium;
     font-weight:normal;
 }
-
+.book img{
+    padding-left: 18px;
+}
 .textbtn{
     color: white;
   
 }
 .searchIcon {
     border-radius: 5px;
-    width: 490px;
+    width: 50%;
     outline: none;
     border: 1px solid white;
     background-color: white;
@@ -30,4 +33,19 @@
 .search-icon,
 .searchInput:focus {
     outline: none;
+}
+.mergebtn{
+    border: 2px solid #A03037;
+}
+.profileSubMenu{
+    padding: 15px;
+}
+.myOrderbtn:hover{
+    cursor: pointer;
+} 
+
+@media (max-width : 425px){
+    .mat-toolbar{
+       width:410px;
+    }
 }

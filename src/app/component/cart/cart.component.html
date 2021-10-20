@@ -5,70 +5,233 @@
 
 
     </div>
-    <mat-card class="content-container">
-        <div class="cartText" style="margin-bottom: 37px;" fxLayout="row"  fxLayoutAlign="space-between end">
+    <div class="adjust-box" fxLayoutAlign="center center" fxLayout="row">
+        <mat-card class="content-container" fxFlex="59" >
+            <div class="cartText" style="margin-bottom: 37px;" fxLayout="row" fxLayoutAlign="space-between end">
 
-            <div style="margin-bottom: 10px;" ><b>My Cart<span>({{cartArray.length}})</span></b></div>
+                <div style="margin-bottom: 10px;"><b>My Cart<span>({{cartArray?.length}})</span></b></div>
 
-            <div class="location">
-                <mat-expansion-panel class="panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
-                    <mat-expansion-panel-header>
-                        <mat-panel-title style="padding: 0%; margin: 0%;">
-                            <mat-icon><span class="material-icons-outlined" style="color: #A03037;">
-                                location_on
-                                </span></mat-icon>
-                        </mat-panel-title>
-                        <mat-panel-description style="padding: 0%;  font-size: 12px;" >
-                          BridgeLabz Solutions LLP...{{panelOpenState ? '' : ''}}
-                        </mat-panel-description>
-                    </mat-expansion-panel-header>
-                    <p>Mumbai</p>
-                </mat-expansion-panel>
-              
-            </div>
-   
+                <div class="location" fxHide.xs>
+                    <mat-expansion-panel class="panel" (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title style="padding: 0%; margin: 0%;">
+                                <mat-icon><span class="material-icons-outlined" style="color: #A03037;">
+                                        location_on
+                                    </span></mat-icon>
+                            </mat-panel-title>
+                            <mat-panel-description style="padding: 0%;  font-size: 12px;">
+                                BridgeLabz Solutions LLP...{{panelOpenState ? '' : ''}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>Mumbai</p>
+                    </mat-expansion-panel>
 
-        </div>
-        <hr>
-        <div *ngFor="let cart of cartArray">
-
-            <div fxLayout="row">
-                <div class="book-image" style=" width: 123px;">
-                    <img src="..\assets\Book\Image 11.png" width="65px" height="85px">
                 </div>
-                <div class="description">
-                    <h4 style="margin: 0%;">{{cart.product_id.description}}</h4>
-                    <h5>by {{cart.product_id.author}}</h5>
-                   
-                       <span fxLayoutAlign="center center">
-                        <h4 fxLayoutGap="7px" fxLayout="row"  >
-                            <b>Rs. {{cart.product_id.price}}</b><del><h6>Rs. 5000</h6></del>
-                        </h4>
-                       </span>
-                </div>
-              
-            </div>
-            <div class="plus-minus" >
-                <div class="button-container" fxLayoutGap="4px" fxLayout="row">
-                    <button mat-mini-fab style="background-color: white; width: 25px; height: 25px;" >
-                      <mat-icon style="color: black; font-size: 15px;">remove</mat-icon>
-                    </button>
-                    <div class="input">
-                    <input class="numeric-value" style="width: 40px; height: 24px; background-color: white;">
-                    </div>
-                    <button mat-mini-fab style="background-color: white; width: 25px; height: 25px;" >
-                        <mat-icon style="color: black; font-size: 15px;">add</mat-icon>
-                    </button>
-                    <div  class="remove" ><h6 class="removeCart" (click)="removeCart(cart)" style="margin:5px 0px 0px 14px;">Remove</h6></div>
-                </div>
-                <div class="checkbtn"fxLayoutAlign="end" >
-                <button class="checkoutbtn" mat-raised-button 
-                matTooltip="Place Order" style="background-color:#3371B5; color:#FFFFFF;">CHECK OUT</button>
-            </div>
+
+
             </div>
             <hr>
-        </div>
-        
-    </mat-card>
+            <div class="loopcart" *ngFor="let cart of cartArray">
+
+                <div fxLayout="row">
+                    <div class="book-image" style=" width: 123px;">
+                        <img src="..\assets\Book\Image 11.png" width="65px" height="85px">
+                    </div>
+                    <div class="description">
+                        <h4 style="margin: 0%;">{{cart.product_id.bookName}}</h4>
+                        <h5>by {{cart.product_id.author}}</h5>
+
+                        <span>
+                            <h4 fxLayoutGap="7px" fxLayout="row">
+                                <b>Rs. {{cart.product_id.price}}</b><del>
+                                    <h6>Rs. 5000</h6>
+                                </del>
+                            </h4>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="plus-minus">
+                    <div class="button-container" fxLayoutGap="4px" fxLayout="row">
+                        <button mat-mini-fab style="background-color: white; width: 25px; height: 25px;">
+                            <mat-icon  (click)="decrement()"style="color: black; font-size: 15px; margin-top: -5px; ">remove</mat-icon>
+                        </button>
+                        <div class="input">
+                            <input class="numeric-value" style="width: 40px; height: 24px; padding-left: 30px; " [value]="quantity" >
+                        </div>
+                        <button mat-mini-fab style="background-color: white; width: 25px; height: 25px;">
+                            <mat-icon (click)="increment(cart)"  style="color: black; font-size: 15px; margin-top: -5px;">add</mat-icon>
+                        </button>
+                        <div class="remove">
+                            <h6 class="removeCart" (click)="removeCart(cart)" style="margin:5px 0px 0px 14px; ">Remove
+                            </h6>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+            </div>
+            <div class="checkbtn" fxLayoutAlign="end">
+                <button class="checkoutbtn" mat-raised-button matTooltip="Place Order"
+                    style="background-color:#3371B5; color:#FFFFFF;" *ngIf="displayButton"
+                    (click)="addressToggles()">PLACE ORDER</button>
+            </div>
+            <div *ngIf="!displayButton">
+
+            </div>
+        </mat-card>
+
+
+
+    </div>
+    <!-- -----------------------------------Address Section ------------------------------------------------>
+
+    <div class="secMatcard" fxLayoutAlign="center">
+        <mat-card class="Address Details" fxLayout="row" 
+            fxFlex="50" style="margin-bottom: 37px; padding: 30px;" >
+            <div class="address" *ngIf="displayAddress">
+                <span>Address Details</span>
+            </div>
+            <form action="" *ngIf="!displayAddress" [formGroup]="CustomerForm">
+                <div class="customer title">
+                    <h3><b>Customer Details</b></h3>
+                </div>
+
+                <div class="Name-mobile" fxLayout="row wrap" fxLayoutGap="15px">
+                    <div class="fullname">
+                        <div>
+                            <mat-label>Full Name</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline" class="input-bar">
+                            <input formControlName="fullName" matInput placeholder="Full name">
+                            <mat-error>Enter valid Full name</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="MobileNo" >
+                        <div>
+                            <mat-label>Mobile Number</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline" class="input-bar">
+                            <input formControlName="mobileNo" matInput placeholder="Mobile Number">
+                            <mat-error>Enter valid Mobile No.</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="work-address">
+                    <div class="customer-address">
+
+                        <div>
+                            <mat-label>Address Type</mat-label>
+                        </div>
+                        <!-- <input formControlName="addressType"> -->
+                        <mat-form-field appearance="outline">
+                         
+                            <mat-label>Address Type</mat-label>
+                            <mat-select formControlName="addressType">
+                              <mat-option *ngFor="let i of addressTypeArray" [value]="i">
+                                {{i}}
+                              </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                        
+
+
+
+
+                        <div class="Address">
+                            <div>
+                                <mat-label>Address</mat-label>
+                            </div>
+                            <mat-form-field appearance="outline" class="input-bar">
+                                <input formControlName="fullAddress" matInput placeholder="Address">
+                                <mat-error>Enter valid Address</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="city-state" fxLayout="row wrap"  fxLayoutGap="15px">
+                    <div class="city">
+                        <div>
+                            <mat-label>City/Town</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline" class="input-bar">
+                            <input formControlName="city" matInput placeholder="*City-Town-village">
+                            <mat-error>Enter valid city</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="state">
+                        <div>
+                            <mat-label>State</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline" class="input-bar">
+                            <input formControlName="state" matInput placeholder="*State">
+                            <mat-error>Enter valid State</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="checkbtn" fxLayoutAlign="end" *ngIf="displayContinueButton">
+                    <button class="checkoutbtn" mat-raised-button matTooltip="Place Order"
+                        style="background-color:#3371B5; color:#FFFFFF;" (click)="onSubmit()" (click)="continue()"
+                        >Continue</button>
+                </div>
+
+            </form>
+        </mat-card>
+
+    </div>
+
+    <!-------------------------order Summary------------------------------ -->
+    <div class="matcard3" fxLayoutAlign="center">
+
+        <mat-card fxFlex="50" style="padding: 30px;">
+            <div class="address" *ngIf="displayCart">
+                <span>Order Summary</span>
+            </div>
+
+
+            <div class="book-summary" *ngIf="!displayCart">
+                <div>
+                    <div><h4><b>Order Summary</b></h4></div>
+                    <div class="ngsummary" *ngFor="let cart of cartArray">
+
+                        <div fxLayout="row">
+                            <div class="book-image" style=" width: 123px;">
+                                <img src="..\assets\Book\Image 11.png" width="65px" height="85px">
+                            </div>
+                            <div class="book-description">
+                                <h4 style="margin: 0%;">{{cart.product_id.description}}</h4>
+                                <h5>by {{cart.product_id.author}}</h5>
+
+                                <span>
+                                    <h4 fxLayoutGap="7px" fxLayout="row">
+                                        <b>Rs. {{cart.product_id.price}}</b><del>
+                                            <h6>Rs. 5000</h6>
+                                        </del>
+                                    </h4>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="checkbtn" fxLayoutAlign="end">
+                        <button  class="checkoutbtn" mat-raised-button matTooltip="Place Order"
+                       
+                            style="background-color:#3371B5; color:#FFFFFF;" (click)="checkout()">CHECKOUT</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </mat-card>
+
+    </div>
+
 
 </div>
+
+<!-- [fxFlex="shrink"] -->

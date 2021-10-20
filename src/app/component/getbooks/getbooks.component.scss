@@ -1,9 +1,10 @@
-
+.main-container{
+    width: 100%;
+}
 .main-card{
     width: 235px;
     height: 275px;
-    margin-bottom: 20px;
-    margin-top: 37px;
+    margin-bottom: 74px;
     margin-left: 50px;
     padding: 0%;
 }
@@ -11,6 +12,9 @@
 //     box-sizing: border-box;
 //     // border: 2px red solid;
 // }
+.book-title{
+    margin: 37px 0px 37px 50px;
+}
 h3 , h5{
     padding: 0%;
     margin: 0%;

@@ -1,0 +1,99 @@
+ 
+    <div class="head-link" fxLayout="row" fxLayoutAlign="center" style="width:33%; margin-top: 37px;">
+        <div class="Homelink" routerLink="/dashboard/getbooks" style="cursor: pointer;">Home/</div>
+        <span><b>({{booksdata?.quantity}})</b></span>
+    </div>
+
+    <div class="main-container" fxLayout="row wrap" fxLayoutAlign="center" fxLayout.xs="column">
+        <div class="twoSmallBook" fxLayout.xs="row">
+            <div class="book1">
+                <img src="..\assets\Book\Image1.png" alt="" style="border: 1px solid #7C1E1E; padding: 5px;">
+            </div>
+            <div class="book2">
+                <img src="..\assets\Book\img2.png" alt="" style="border: 1px solid #7C1E1E; padding: 5px;">
+            </div>
+        </div>
+
+        <div class="main-bookbox" style=" width: 25%;" fxHide.xs fxHide.md fxHide.sm>
+            <div class="book-section" style="border: 1px solid #D1D1D1; width: 100%;">
+
+                <div class="BigBook" style="padding:36px 18px ;" fxLayoutAlign="center center">
+                    <img src="..\assets\Book\ImageB.png" alt="">
+                </div>
+
+            </div>
+            <br>
+            <div class="bottomButton" fxLayoutGap="10px" style="width: 100%;">
+                <button class="add-btn" mat-raised-button color="primary">ADD TO BAG</button>
+                <button class="wish-btn" mat-raised-button><img style="padding-right: 10px;"
+                        src="..\assets\Book\whiteheart.svg" alt="">WISHLIST</button>
+            </div>
+        </div>
+
+
+
+        <div class="book-details" style=" width: 40%; padding: 0% 2% 2% 2%;">
+            <div class="book-descrption">
+                <h1><b>{{booksdata?.description}}</b></h1>
+                <h3 style="color: #878787;">{{booksdata?.author}}</h3>
+
+                <div calss="ratingbtn" style="margin-bottom: 20px; width: 40%;" fxLayout="row"
+                    fxLayoutAlign="start center" fxLayoutGap="15px">
+                    <button mat-raised-button class="ratingbtn" style="background-color: #388E3C;"
+                        fxLayoutAlign="start center">
+                        <span style="color: white; padding-right: 4px;">4.5</span>
+                        <img src="..\assets\Book\star_white_18dp.svg">
+                    </button>
+                    <span>(20)</span>
+                </div>
+
+                <div class="price" fxLayoutAlign="start center">
+                    <h1 fxLayoutGap="7px" fxLayout="row">
+                        <b>Rs. {{booksdata?.price}}</b><del>
+                            <h3>Rs. {{booksdata?.price*1.5}}</h3>
+                        </del>
+                    </h1>
+                </div>
+
+
+            </div>
+
+
+            <div class="divider">
+                <hr>
+            </div>
+
+
+            <div class="bookbreif">
+                <ul class="book-title" style="padding: 1.5%;">
+                    <li>Book Details</li>
+                </ul>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Magnam pariatur qui exercitationem odio eius quidem mollitia temporibus neque,
+                dolores suscipit ad? Eum, nobis? Ex ad nesciunt illum et mollitia possimus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+
+            <div class="divider">
+                <hr>
+            </div>
+
+
+
+            <div class="customerFeedback">
+                <h2>Customer Feedback</h2>
+            </div>
+            <div class="stars">
+                <app-ratingstar></app-ratingstar>
+            </div>
+
+           
+
+
+
+        </div>
+
+    </div>

@@ -53,9 +53,7 @@ export class LoginComponent implements OnInit {
     }, (error:any) => {
 
       console.log(error);
-      this.matSnackBar.open("Login Unsuccessful ", ' ', {
-        duration: 3000,
-     });
+      this.matSnackBar.open("Login Unsuccessful ", ' ', {duration: 3000,});
 
     })
   }

@@ -1,0 +1,35 @@
+<div class="main-container" fxLayoutAlign="center center" >
+   
+
+    <div class="vBox" fxHide.xs fxFlex="30"  > 
+    <mat-card class="horizontal-card" >
+        <div>
+            <img src="..\assets\shoppingGirl.png" alt="" >
+            <h2 class="heading">ONLINE BOOK SHOPPING</h2>
+        </div>
+    </mat-card>
+</div>
+
+     <div class="vertical-card">
+
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span  class="my-custom-class">LOGIN</span>
+                </ng-template>
+                <app-adminlogin></app-adminlogin>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span id="signup" style="margin-right: 10px;" class="my-custom-class">SIGNUP</span>
+                </ng-template>
+                <app-adminregistration></app-adminregistration>
+            </mat-tab>
+
+        </mat-tab-group>
+
+
+    </div> 
+
+
+</div>

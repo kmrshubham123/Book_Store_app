@@ -1,0 +1,36 @@
+
+<div class="rate1" >
+
+    <div class="rate-heading">
+        <h5 style="padding-left: 2%; color: #373434;"><b>Over all rating</b></h5>
+    </div>
+   
+
+        <div class="rate" style="  padding-left: 1%;">
+            <input type="radio" id="star5" [(ngModel)]="value" name="rate" value="5" />
+            <label for="star5" title="Very Satisfied">5 stars</label>
+            <input type="radio" id="star4"  [(ngModel)]="value"  name="rate" value="4" />
+            <label for="star4" title="Satisfied">4 stars</label>
+            <input type="radio" id="star3"  [(ngModel)]="value"  name="rate" value="3" />
+            <label for="star3" title="Fair">3 stars</label>
+            <input type="radio" id="star2"  [(ngModel)]="value"  name="rate" value="2" />
+            <label for="star2" title="Dissatisfied">2 stars</label>
+            <input type="radio" id="star1"  [(ngModel)]="value"  name="rate" value="1" />
+            <label for="star1" title="Very Dissatisfied">1 star</label>
+        </div>
+
+
+    <div class="write-review" width="100%" style="padding-left: 3%;" >
+        <input type="text" placeholder="Write your review" [(ngModel)]="comment" style="background-color: white; padding-left: 5%;" >
+    </div>
+
+    <div class="bottomButton" fxLayoutAlign="end" style="padding:3% 10% 5% 0; ">
+        <button class="add-btn" (click)="feedback()" mat-raised-button color="primary">Submit</button>
+    </div>
+</div>
+<div  fxLayoutGap="20px" *ngFor="let item of bookStoreArray">
+    <div><b>User:</b>{{item.user_id.fullName}}<br />
+    <b>Comment:</b>{{item.comment}}<br />
+    <b>Rating:</b>{{item.rating}}<br />
+</div>
+<!-- fxLayout="column wrap" fxLayoutAlign="start start" -->
