@@ -19,7 +19,7 @@ describe('ForgotpasswordComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Forgot-password component should create', () => {
     expect(component).toBeTruthy();
   });
 });

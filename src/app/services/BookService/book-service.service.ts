@@ -113,7 +113,7 @@ export class BookServiceService {
 
 
 
-  /*****Feed-Back*POST***/
+ 
   FeedbackService(review: any,data:any) {
     this.token = localStorage.getItem('token');
     let httpAuthOptions = {
@@ -125,7 +125,7 @@ export class BookServiceService {
     return this.httpService.postService(this.BaseUrl+'/bookstore_user/add/feedback/'+data,review,true,httpAuthOptions);
   }
 
-/*****Feed-Back***GET****/
+
 GetFeedbackService(id:any){
 
     let httpAuthOptions = {
@@ -138,6 +138,16 @@ GetFeedbackService(id:any){
     
     return this.httpService.getService(this.BaseUrl+'/bookstore_user/get/feedback/'+id,true,httpAuthOptions);
 
+  }
+
+  AdmingetBookService(){
+    let httpAuthOptions={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':this.token
+      })
+    }
+    return this.httpService.getService(this.BaseUrl + '/bookstore_user/get/book' ,false,httpAuthOptions)
   }
 
 }

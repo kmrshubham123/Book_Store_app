@@ -1,53 +1,62 @@
 <mat-card class="main-container" fxLayoutAlign="center center">
-<form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="22px">
+    <form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="22px">
 
-    <div class="EmailId">
-      <div>
-            <mat-label>Email Id</mat-label>
+        <div class="EmailId">
+            <div>
+                <mat-label>Email Id</mat-label>
+            </div>
+            <mat-form-field appearance="outline" class="input-bar">
+                <input formControlName="email" matInput placeholder="Email Id">
+                <mat-error>Enter vaild email</mat-error>
+            </mat-form-field>
         </div>
-        <mat-form-field appearance="outline" class="input-bar">
-            <input formControlName="email" matInput placeholder="Email Id">
-            <mat-error>Enter vaild email</mat-error>
-        </mat-form-field>
-    </div>
 
-    <div class="Password">
-        <div>
-            <mat-label>Password</mat-label>
+
+        <div class="Password">
+            <div>
+                <mat-label>Password</mat-label>
+            </div>
+            <mat-form-field appearance="outline" class="input-bar">
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <mat-error>Enter vaild password</mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide" style="border:none; outline:none; background:none;">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
         </div>
-        <mat-form-field appearance="outline" class="input-bar">
-            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-            <mat-error>Enter vaild password</mat-error>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide" style="border:none; outline:none; background:none;">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-    </div>
 
-    <div class="forgotPassword" fxLayoutAlign="end">
-        <div class="forgotbtn" routerLink="/forgot">Forgot Password?</div>
-   </div>
+ 
+        <div class="selectBox" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign="space-between">
+
+            <mat-form-field appearance="outline" class="mutiple-login"
+                style=" font-size: 9px; width: 28%; ">
+                <mat-label>Login-via</mat-label>
+                <mat-select>
+                    <mat-option value="option1" (click)="show=true">User</mat-option>
+                    <mat-option value="option2" (click)="show=false">Admin</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div style=" font-size: 9px; margin-left: -30px; " class="forgotbtn" routerLink="/forgot">Forgot Password?</div>
+        </div>
+
 
     <div class="SubmitBtn">
-        <button class="login-btn" (click)="onSubmit()" mat-raised-button >Login</button>
+        <!-- <button class="login-btn" (click)="onSubmit()" mat-raised-button >Login</button> -->
+        <button class="login-btn" *ngIf="show" (click)="onSubmitUser()" mat-raised-button>User Login</button>
+        <button class="login-btn" *ngIf="!show" (click)="onSubmitAdmin()" mat-raised-button>Admin Login</button>
     </div>
 
-  
-    <!-- <div class = "text">
-        <mat-divider class = "divider"></mat-divider>
-        <span style="padding: 4px; font-weight: 500;"><h3>OR</h3></span>
-        <mat-divider class = "divider"></mat-divider>
-    </div> -->
 
-    <div class="text">
-        <hr class="hr-text" data-content="OR">
-    </div>
+        <div class="text">
+            <hr class="hr-text" data-content="OR">
+        </div>
 
-    <div class="bottomButton" fxLayoutAlign="space-around center" fxLayoutGap="10px" >
-        <button class="fb-btn"  mat-raised-button color="primary">facebook</button>
-        <button class="google-btn"  mat-raised-button >Google</button>
-    </div>
-    
-</form>
+        <div class="bottomButton" fxLayoutAlign="space-around center" fxLayoutGap="10px">
+            <button class="fb-btn" mat-raised-button color="primary">facebook</button>
+            <button class="google-btn" mat-raised-button>Google</button>
+        </div>
+
+    </form>
 </mat-card>

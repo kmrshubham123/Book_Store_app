@@ -1,7 +1,21 @@
 <div class="main-box" style="min-height:100vh;">
-  <div class="book-title">
-    <h2><b>Books ({{bookArray.length}})</b></h2>
+  <div class="header-content" style="margin: 45px; width: 89%;" fxLayout="row wrap"
+    fxLayoutAlign="space-between center">
+
+    <h2 class="book-title"><b>Books ({{bookArray.length}})</b></h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Sort by relevance</mat-label>
+      <mat-select disableRipple>
+        <mat-option value="1">Customer Rating</mat-option>
+        <mat-option value="2">Price : Low to High</mat-option>
+        <mat-option value="3">Price : High to Low</mat-option>
+        <mat-option value="4">Newest Arrivals</mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </div>
+
   <div class="main-container" fxLayout="row wrap" fxLayoutGap="10px">
 
     <mat-card class="main-card" *ngFor="let book of bookArray">
@@ -50,4 +64,24 @@
 
     </mat-card>
   </div>
+  <!-- pagination elements -->
+  <div class="page-container" fxLayoutAlign="center">
+    <div class="pagination_section"  fxLayoutAlign=" center center" fxLayoutGap="25px">
+
+      <button mat-mini-fab style="background-color: white; color:black">&lsaquo;</button>
+      <div class="number-btn" style="cursor: pointer;" fxLayout="row">
+      <div class="number" title="">1</div>
+      <div class="number" title="">2</div>
+      <div class="number" title="">3</div>
+      <div class="number" title="">4</div>
+      <div class="number" title="">5</div>
+      <div class="number" title="">6</div>
+      <div class="number" title="">7</div>
+      </div>
+      <button mat-mini-fab style="background-color: white; color:black">&rsaquo;</button>
+  
+    </div>
+  </div>
+  <br>
+
 </div>

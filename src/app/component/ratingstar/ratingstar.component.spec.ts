@@ -1,5 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -15,6 +17,9 @@ describe('RatingstarComponent', () => {
       imports:[ HttpClientModule,
                  MatSnackBarModule,
                  RouterTestingModule,
+                 FormsModule,
+                 MatInputModule,
+                 ReactiveFormsModule
 
       ],
     })
@@ -27,7 +32,19 @@ describe('RatingstarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Star-rating should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
+  it('ngOnInit should change object value for Feedback', () => {
+    component.ngOnInit();  //run ngOnInit
+    expect(component.getFeedback).toBeTruthy();
+  }); 
+
+  it('User-feedback should be true', () => {
+    component.feedback();
+    expect(component.feedback).toBeTruthy();
+  });
+
 });

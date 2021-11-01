@@ -11,80 +11,80 @@ import { DataService } from 'src/app/services/dataService/data.service';
 })
 export class RatingstarComponent implements OnInit {
 
-comment:any
-bookStoreArray:any
-value: any;
-id:any;
-booksdata: any;
+  comment: any
+  bookStoreArray: any
+  value: any;
+  id: any;
+  booksdata: any;
 
 
 
-constructor(private bookService:BookServiceService,private matSnackBar:MatSnackBar,private router:Router,private dataService:DataService) {
-  this.booksdata = this.router.getCurrentNavigation()?.extras.state
-  console.log(this.booksdata)
- }
+  constructor(private bookService: BookServiceService, private matSnackBar: MatSnackBar, private router: Router, private dataService: DataService) {
+    this.booksdata = this.router.getCurrentNavigation()?.extras.state
+
+  }
 
   ngOnInit(): void {
     this.getFeedback()
     this.dataService.recevieData.subscribe(
-      (response:any)=>{
-        console.log(response);
+      (response: any) => {
         this.getFeedback();
       })
 
   }
-  
-  feedback(){
-    try{
-      let data={
-        comment : this.comment,
-        rating : this.value
+
+  feedback() {
+    try {
+      let data = {
+        comment: this.comment,
+        rating: this.value
       }
-  
+
       this.id = this.booksdata.id;
-      
-      this.bookService.FeedbackService(data,this.id).subscribe(
-      
+
+      this.bookService.FeedbackService(data, this.id).subscribe(
+
         (response: any) => {
-          console.log('reviewID',response);
-          
+
+
           this.dataService.sendData(response);
-  
-          this.matSnackBar.open("FeedBack Successfull", '', { duration: 2000,});
-  
+
+          this.matSnackBar.open("FeedBack Successfull", '', { duration: 2000, });
+
         },
-        
-        (error: any) => {console.log(error);
+
+        (error: any) => {
+          console.log(error);
         });
     }
-    catch(Error:any){
-        console.log(Error.Message)
-    }
-
-   
+    catch (error: any) {
+      console.log(error.Message)
     }
 
 
+  }
 
-    getFeedback(){
-      try{
-        this.bookService.GetFeedbackService(this.booksdata.id).subscribe(
-          (response: any) => { 
-            
-            console.log(response.result)
-            
-            this.bookStoreArray=response['result'];
-            
-            console.log("getBooksArray",this.bookStoreArray);
-            this.bookStoreArray.reverse()
-    
-          })
-      }
-      catch(Error:any){
-        console.log(Error.Message)
-      }
 
-     
+
+  getFeedback() {
+    try {
+      this.bookService.GetFeedbackService(this.booksdata.id).subscribe(
+        (response: any) => {
+
+          console.log(response.result)
+
+          this.bookStoreArray = response['result'];
+
+          console.log("getBooksArray", this.bookStoreArray);
+          this.bookStoreArray.reverse()
+
+        })
     }
+    catch (error: any) {
+      console.log(error.Message)
+    }
+
+
+  }
 
 }

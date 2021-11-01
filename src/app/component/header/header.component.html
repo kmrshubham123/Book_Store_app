@@ -44,10 +44,10 @@
             </div>
             </mat-menu>
 
-            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;"  >
+            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;"   >
 
-                <img src="..\assets\shopping_cart_white_24dp.svg" alt="">
-                <div class="textbtn">Cart</div>
+                <img src="..\assets\shopping_cart_white_24dp.svg" alt="" >
+                <div class="textbtn" style="padding-top: 0%;"   matBadge={{cartArray.length}} [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">Cart</div>
 
             </button>
             <!-- <button routerLink="/dashboard/wishlist" mat-stroked-button style="background-color: #A03037;">

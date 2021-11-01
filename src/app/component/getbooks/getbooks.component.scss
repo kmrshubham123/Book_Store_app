@@ -7,14 +7,16 @@
     margin-bottom: 74px;
     margin-left: 50px;
     padding: 0%;
+    border: 1px #E2E2E2 solid;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 // .main-card{
 //     box-sizing: border-box;
 //     // border: 2px red solid;
 // }
-.book-title{
-    margin: 37px 0px 37px 50px;
-}
+// .book-title{
+//     margin: 37px 0px 37px 50px;
+// }
 h3 , h5{
     padding: 0%;
     margin: 0%;
@@ -36,3 +38,21 @@ h3 , h5{
 .favbtn:focus{
     color: #A03037;
 }
+
+/* pagination hover effect on non-active */
+.pagination_section a:hover:not(.active) {
+    background-color: #031F3B;
+    color: white;
+}
+ 
+/* pagination hover effect on active*/
+.number{
+    border: white 1px solid;
+    padding: 5px 10px;
+}
+.number:hover{
+    background-color: #A03037;
+    color: white;
+
+}
+      

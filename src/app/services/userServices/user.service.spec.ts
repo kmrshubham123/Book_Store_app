@@ -4,6 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { UserService } from './user.service';
 
 describe('UserService', () => {
+  
   let service: UserService;
 
   beforeEach(() => {
@@ -17,4 +18,8 @@ describe('UserService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  // it('#getValue should return real value', () => {
+  //   expect(service.signUpUserService()).toBe('real value');
+  // });
 });

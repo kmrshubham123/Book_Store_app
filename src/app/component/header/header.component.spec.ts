@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
@@ -17,7 +18,8 @@ describe('HeaderComponent', () => {
       imports:[ RouterTestingModule,
                 MatMenuModule,
                 MatToolbarModule,
-                MatDividerModule
+                MatDividerModule,
+                HttpClientModule
 
       ],
     })
@@ -30,7 +32,16 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // it('header component should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
+
+  
+  it('logout should be true', () => {
+    component.logout();
+    expect(component.logout).toBeTruthy();
   });
+
+
+
 });

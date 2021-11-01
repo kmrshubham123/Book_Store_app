@@ -19,7 +19,7 @@ describe('AdmindashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Admin-dashboard component should create', () => {
     expect(component).toBeTruthy();
   });
 });
