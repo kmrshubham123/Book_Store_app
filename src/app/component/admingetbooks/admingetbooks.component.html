@@ -1,0 +1,43 @@
+<div class="main-header" fxLayoutAlign="center center">
+    <div class="header-content" style="width:90%; margin-top: 37px;" fxLayoutAlign="space-between center">
+        <h2><b>Books ({{bookArray.length}})</b></h2>
+
+        <mat-form-field appearance="outline" style="font-size: 12px;">
+            <mat-label>Sort by relevance</mat-label>
+            <mat-select disableRipple>
+                <mat-option value="1">Customer Rating</mat-option>
+                <mat-option value="2">Price : Low to High</mat-option>
+                <mat-option value="3">Price : High to Low</mat-option>
+                <mat-option value="4">Newest Arrivals</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="main-container" fxLayoutAlign="center center">
+    <table id="material">
+
+        <tr>
+            <th>Id</th>
+            <th>BookImage</th>
+            <th>Author</th>
+            <th>BookName</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>CreatedAt</th>
+            <th>UpdatedAt</th>
+        </tr>
+
+
+        <tr *ngFor="let book of bookArray">
+            <td>{{book._id}}</td>
+            <td><img src="..\assets\Book\Image 11.png" alt="" width="80px" height="100"></td>
+            <td>{{book.author}}</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.quantity}}</td>
+            <td>{{book.createdAt}}</td>
+            <td>{{book.updatedAt}}</td>
+        </tr>
+
+    </table>
+</div>

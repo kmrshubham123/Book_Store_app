@@ -27,7 +27,25 @@ describe('AdminloginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Admin Login should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Should set submitted to true', () => {
+    component.onSubmit();
+    expect(component.onSubmit).toBeTruthy();
+ });
+
+  it('Admin-Login From should be valid',() => {
+      component.AdminloginForm.controls['email'].setValue('xyz123@gmail.com');
+      component.AdminloginForm.controls['password'].setValue('xyz12345');
+      expect(component.AdminloginForm.valid).toBeTruthy();
+  });
+
+  
+  it('Admin-Login From should be Invalid',() => {
+    component.AdminloginForm.controls['email'].setValue('');
+    component.AdminloginForm.controls['password'].setValue('');
+    expect(component.AdminloginForm.valid).toBeFalsy();
   });
 });

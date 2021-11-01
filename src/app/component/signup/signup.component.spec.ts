@@ -33,7 +33,30 @@ describe('SignupComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Signup Component should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('Should set submitted to true', () => {
+    component.onSubmit();
+    expect(component.onSubmit).toBeTruthy();
+ });
+
+ it('From should be valid',() => {
+  component.signUpForm.controls['fullName'].setValue('Kumar Shubham');
+  component.signUpForm.controls['email'].setValue('xyz123@gmail.com');
+  component.signUpForm.controls['password'].setValue('xyz12345');
+  component.signUpForm.controls['mobileNo'].setValue('7894561230');
+  expect(component.signUpForm.valid).toBeTruthy();
+});
+
+it('From should be Invalid',() => {
+  component.signUpForm.controls['fullName'].setValue('');
+  component.signUpForm.controls['email'].setValue('');
+  component.signUpForm.controls['password'].setValue('');
+  component.signUpForm.controls['mobileNo'].setValue('');
+  expect(component.signUpForm.invalid).toBeFalsy();
+});
+
 });

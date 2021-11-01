@@ -19,7 +19,7 @@ describe('AdminhomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Admin-Home component should create', () => {
     expect(component).toBeTruthy();
   });
 });

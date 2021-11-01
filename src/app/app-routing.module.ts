@@ -18,6 +18,10 @@ import { AdmindashboardComponent } from './component/admindashboard/admindashboa
 import { AdminregistrationComponent } from './component/adminregistration/adminregistration.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './component/adminhome/adminhome.component';
+import { AdminheaderComponent } from './component/adminheader/adminheader.component';
+import { AdmingetbooksComponent } from './component/admingetbooks/admingetbooks.component';
+
+
 
 
 
@@ -36,10 +40,16 @@ const routes: Routes = [
   {path:'ratingstar',component:RatingstarComponent},
   {path:'adminRegistration',component:AdminregistrationComponent},
   {path:'adminLogin',component:AdminloginComponent},
-  {path:'admin',component:AdmindashboardComponent},
   {path:'adminhome',component:AdminhomeComponent},
 
+ 
 
+  
+  {path:'admindashboard',component:AdmindashboardComponent, canActivate:[AuthenticationguardGuard],
+  children:[
+    {path:'admingetbooks',component:AdmingetbooksComponent},
+    {path:'adminheader',component:AdminheaderComponent},
+  ]},
 
 
 
@@ -51,6 +61,7 @@ const routes: Routes = [
     {path:'cart', component:CartComponent},
     {path:'orderplaced',component:OrderplacedComponent},
     {path:'bookdetail',component:BookdetailComponent},
+   
     
   ]}
 

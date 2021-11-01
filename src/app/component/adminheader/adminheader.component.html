@@ -37,25 +37,12 @@
                     <img src="..\assets\header\account_balance_wallet_black_18dp.svg" alt="">
                     <span class="myOrderbtn" style="color: #878787;" >My Orders</span>
                 </div>
-                <div class="wishlistbtn" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <!-- <div class="wishlistbtn" fxLayoutAlign="start center" fxLayoutGap="10px">
                     <img src="..\assets\header\favorite_border_black_18dp.svg" alt="">
                     <span routerLink="/dashboard/wishlist" class="myOrderbtn" style="color: #878787;">Wishlists</span>
-                </div>
+                </div> -->
             </div>
             </mat-menu>
-
-            <button routerLink="/dashboard/cart" mat-stroked-button style="background-color: #A03037;"   >
-
-                <img src="..\assets\shopping_cart_white_24dp.svg" alt="" >
-                <div class="textbtn" style="padding-top: 0%;"   matBadge={{cartArray.length}} [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">Cart</div>
-
-            </button>
-            <!-- <button routerLink="/dashboard/wishlist" mat-stroked-button style="background-color: #A03037;">
-
-                <img src="..\assets\Book\favorite_border_white_24dp (1).svg" alt="">
-                <div class="textbtn">Wishlist</div>
-
-            </button> -->
 
         </div>
 

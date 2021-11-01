@@ -23,7 +23,7 @@ describe('OrderplacedComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('order-placed component should create', () => {
     expect(component).toBeTruthy();
   });
 });

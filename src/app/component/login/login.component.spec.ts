@@ -45,7 +45,32 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Login component should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('User-Login Should set submitted to true', () => {
+    component.onSubmitUser();
+    expect(component.onSubmitUser).toBeTruthy();
+ });
+
+ it('Admin-Login Should set submitted to true', () => {
+  component.onSubmitAdmin();
+  expect(component.onSubmitAdmin).toBeTruthy();
+});
+
+  it('User-Login From should be valid',() => {
+      component.loginForm.controls['email'].setValue('xyz123@gmail.com');
+      component.loginForm.controls['password'].setValue('xyz12345');
+      expect(component.loginForm.valid).toBeTruthy();
+  });
+
+  
+  it('User-Login From should be Invalid',() => {
+    component.loginForm.controls['email'].setValue('');
+    component.loginForm.controls['password'].setValue('');
+    expect(component.loginForm.invalid).toBeFalsy();
+  });
+
+
 });

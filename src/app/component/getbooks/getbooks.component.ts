@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./getbooks.component.scss']
 })
 export class GetbooksComponent implements OnInit {
+ 
   bookArray: any = []  //store all data in array
 
     token:any
@@ -17,7 +18,7 @@ export class GetbooksComponent implements OnInit {
 
     // @Input() bookcard:any
 
-  constructor(private bookService: BookServiceService , private matSnackBar:MatSnackBar,private dataService:DataService,
+  constructor(public bookService: BookServiceService , private matSnackBar:MatSnackBar,private dataService:DataService,
               private router:Router) { }
 
   ngOnInit(): void {
@@ -75,6 +76,7 @@ export class GetbooksComponent implements OnInit {
 
     this.bookService.addMyCartService(data).subscribe((response: any) => {
       console.log(response);
+      this.dataService.sendData(response);
       this.matSnackBar.open("Added in cart ", ' ', {duration: 3000,});
 
     },error =>{

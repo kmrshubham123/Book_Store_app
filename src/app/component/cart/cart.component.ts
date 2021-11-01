@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   panelOpenState = false;
   cartArray: any = []
   cart:any //indivisual (cart of cartArray)
-
+  
   
   displayAddress = true;
   displayButton = true;
@@ -199,9 +199,7 @@ export class CartComponent implements OnInit {
         this.matSnackBar.open("Order UnSuccessfull",'',{ duration: 3000,});
       })
   }
-  // continueShopping(){
-  //   this.router.navigate(['/dashboard/orderplaced']);
-  // }
+  
 
 
 

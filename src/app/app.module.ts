@@ -43,8 +43,10 @@ import { AdmindashboardComponent } from './component/admindashboard/admindashboa
 import { AdminregistrationComponent } from './component/adminregistration/adminregistration.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './component/adminhome/adminhome.component';
-
-
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AdminheaderComponent } from './component/adminheader/adminheader.component';
+import { AdmingetbooksComponent } from './component/admingetbooks/admingetbooks.component';
 
 
 
@@ -72,6 +74,8 @@ import { AdminhomeComponent } from './component/adminhome/adminhome.component';
     AdminregistrationComponent,
     AdminloginComponent,
     AdminhomeComponent,
+    AdminheaderComponent,
+    AdmingetbooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,13 +83,12 @@ import { AdminhomeComponent } from './component/adminhome/adminhome.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-  
     MatIconModule,
     FlexLayoutModule,
     HttpClientModule,MatSnackBarModule,FormsModule,ReactiveFormsModule,MatCardModule,
     MatTabsModule,MatDividerModule,MatButtonModule,MatToolbarModule,MatTooltipModule,
     MatExpansionModule,MatMenuModule,MatOptionModule,
-    MatFormFieldModule,MatSelectModule
+    MatFormFieldModule,MatSelectModule,MatBadgeModule,MatPaginatorModule
 
    
   ],

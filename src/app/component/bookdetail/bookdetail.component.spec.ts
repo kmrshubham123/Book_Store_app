@@ -6,7 +6,7 @@ import { RatingstarComponent } from '../ratingstar/ratingstar.component';
 
 import { BookdetailComponent } from './bookdetail.component';
 
-fdescribe('BookdetailComponent', () => {
+describe('BookdetailComponent', () => {
   let component: BookdetailComponent;
   let fixture: ComponentFixture<BookdetailComponent>;
 
@@ -32,8 +32,18 @@ fdescribe('BookdetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Book-details component should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
+  it('ngOnInit should change object value for book-detail Data', () => {
+    component.ngOnInit();  //run ngOnInit
+    expect(component.getData).toBeTruthy();
+  });
+
+  it('Particular book should be true', () => {
+    component.getParticularBook();
+    expect(component.getParticularBook).toBeTruthy();
+  });
+
 });
